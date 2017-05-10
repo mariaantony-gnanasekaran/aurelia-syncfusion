@@ -497,7 +497,14 @@ System.config({
     }
   },
   bundles: {
-    "app-build-082df99e03.js": [
+    "app-build-21466a7735.js": [
+      "about/about.html!github:systemjs/plugin-text@0.0.4.js",
+      "about/about.js",
+      "about/ej-bridge-init.html!github:systemjs/plugin-text@0.0.4.js",
+      "about/ej-bridge-viewmodel.js",
+      "about/ej-standard-init.html!github:systemjs/plugin-text@0.0.4.js",
+      "app.html!github:systemjs/plugin-text@0.0.4.js",
+      "app.js",
       "github:PrismJS/prism@1.3.0.js",
       "github:PrismJS/prism@1.3.0/prism.js",
       "github:aurelia-ui-toolkits/aurelia-syncfusion-bridge@master.js",
@@ -609,6 +616,13 @@ System.config({
       "github:twbs/bootstrap@3.3.6.js",
       "github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-text@0.0.4.js",
       "github:twbs/bootstrap@3.3.6/js/bootstrap.js",
+      "installation/installation.html!github:systemjs/plugin-text@0.0.4.js",
+      "installation/installation.js",
+      "installation/instructions.html!github:systemjs/plugin-text@0.0.4.js",
+      "installation/instructions.js",
+      "main.js",
+      "nav-bar.html!github:systemjs/plugin-text@0.0.4.js",
+      "nav-bar.js",
       "npm:aurelia-binding@1.0.4.js",
       "npm:aurelia-binding@1.0.4/aurelia-binding.js",
       "npm:aurelia-bootstrapper@1.0.0.js",
@@ -1130,7 +1144,20 @@ System.config({
       "npm:showdown-prettify@1.3.0.js",
       "npm:showdown-prettify@1.3.0/dist/showdown-prettify.js",
       "npm:showdown@1.4.3.js",
-      "npm:showdown@1.4.3/dist/showdown.js"
+      "npm:showdown@1.4.3/dist/showdown.js",
+      "route-highlight.js",
+      "sample-runner.html!github:systemjs/plugin-text@0.0.4.js",
+      "sample-runner.js",
+      "shared/au-code.js",
+      "shared/collapse-panel.html!github:systemjs/plugin-text@0.0.4.js",
+      "shared/collapse-panel.js",
+      "shared/component-service.js",
+      "shared/logger.html!github:systemjs/plugin-text@0.0.4.js",
+      "shared/logger.js",
+      "shared/markdown.js",
+      "shared/registry.js",
+      "shared/showcase.html!github:systemjs/plugin-text@0.0.4.js",
+      "shared/theme.js"
     ]
   }
 });
