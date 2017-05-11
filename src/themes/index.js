@@ -6,7 +6,7 @@ export class Index {
             "Flat Saffron Dark": { "path": "flat-saffron-dark", "theme": "flatdark" }, "Gradient Azure": { "path": "gradient-azure", "theme": "gradientlight" }, "Gradient Azure Dark": { "path": "gradient-azure-dark", "theme": "gradientdark" }, "Gradient Lime": { "path": "gradient-lime", "theme": "gradientlight" }, "Gradien Lime Dark": { "path": "gradient-lime-dark", "theme": "gradientdark" },
             "Gradient Saffron": { "path": "gradient-saffron", "theme": "gradientlight" }, "Gradient Saffron Dark": { "path": "gradient-saffron-dark", "theme": "gradientdark" }, "Bootstrap": { "path": "bootstrap-theme", "theme": "bootstrap" }, "High contrast 1": { "path": "high-contrast-01", "theme": "high-contrast-01" }, "High contrast 2": { "path": "high-contrast-02", "theme": "high-contrast-01" }, "Material": { "path": "material", "theme": "material" }, "Office 365": { "path": "office-365", "theme": "material" }
         };
-        this.name = ["Flat Azure", "Flat Azure Dark", "Flat Lime", "Flat Lime Dark", "Flat Saffron", "Flat Saffron Dark", "Gradient Azure", "Gradient Azure Dark", "Gradient Lime", "Gradien Lime Dark", "Gradient Saffron", "Gradient Saffron Dark", "Bootstrap", "Office 365", "High contrast 1", "High contrast 2", "Material"];//office 365 is currently in development
+        this.name = ["Flat Azure", "Flat Azure Dark", "Flat Lime", "Flat Lime Dark", "Flat Saffron", "Flat Saffron Dark", "Gradient Azure", "Gradient Azure Dark", "Gradient Lime", "Gradien Lime Dark", "Gradient Saffron", "Gradient Saffron Dark", "Bootstrap","High contrast 1", "High contrast 2", "Material"];//office 365 is currently in development
     }
     click(theme) {
         window.themeName = theme;
