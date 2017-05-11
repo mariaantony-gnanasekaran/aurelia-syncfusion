@@ -1,6 +1,11 @@
 import { DOM } from 'aurelia-pal';
+import {inject} from 'aurelia-framework';
+import {EventAggregator} from 'aurelia-event-aggregator';
+@inject(EventAggregator)
 export class Index {
-    constructor() {
+    constructor(ea) {
+        window.oldTheme ="vendors/css/web/bootstrap-theme/ej.web.all.min.css";
+        this.ea = ea;
         this.themeInfo = {
             "Flat Azure": { "path": "default-theme", "theme": "flatlight" }, "Flat Azure Dark": { "path": "flat-azure-dark", "theme": "flatdark" }, "Flat Lime": { "path": "flat-lime", "theme": "flatlight" }, "Flat Lime Dark": { "path": "flat-lime-dark", "theme": "flatdark" }, "Flat Saffron": { "path": "flat-saffron", "theme": "flatlight" },
             "Flat Saffron Dark": { "path": "flat-saffron-dark", "theme": "flatdark" }, "Gradient Azure": { "path": "gradient-azure", "theme": "gradientlight" }, "Gradient Azure Dark": { "path": "gradient-azure-dark", "theme": "gradientdark" }, "Gradient Lime": { "path": "gradient-lime", "theme": "gradientlight" }, "Gradien Lime Dark": { "path": "gradient-lime-dark", "theme": "gradientdark" },
@@ -12,15 +17,15 @@ export class Index {
         window.themeName = theme;
         window.theme = this.themeInfo[theme].theme;
         jQuery('body').fadeOut(0, () => {
-        let path = this.themeInfo[theme].path;
-            this.updateTheme(path)
+        this.path = this.themeInfo[theme].path;
+            this.updateTheme(this.path)
                 .then(() => jQuery('body').fadeIn(2000));
         });
     }
 
     updateTheme(path) {
        
-        return Promise.all([this.removeCss(), this.updateCss(), this.themePath(path),this.commonPath(),this.datavisualizationTheme()]);
+        return Promise.all([this.removeCss(), this.updateCss(), this.themePath(path),this.commonPath(),this.datavisualizationTheme()]) .then(() => this.ea.publish('Theme', theme));
     }
 
     datavisualizationTheme() {
@@ -29,6 +34,7 @@ export class Index {
         this.update.loadBulletTheme();
         this.update.loadGaugeTheme();
         this.update.loadRangeNavigatorTheme();
+        window.oldTheme = `vendors/css/web/${this.path}/ej.web.all.min.css`;
     }
     themePath(path) {
         let themePath = System.normalizeSync(`syncfusion-javascript/css/web/${path}/ej.web.all.min.css!`);
@@ -62,7 +68,7 @@ export class Index {
     }
     removeCss() {
         jQuery('head > link').each(function () {
-            if (this.href.includes('/css/web/')) {
+            if (this.href.includes(window.oldTheme) || this.href.includes('vendors/css/web/responsive-css/ej.responsive.css')) {
                 DOM.removeNode(this);
             }
         });
