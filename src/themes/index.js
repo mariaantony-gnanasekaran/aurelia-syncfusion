@@ -9,16 +9,17 @@ export class Index {
         this.name = ["Flat Azure", "Flat Azure Dark", "Flat Lime", "Flat Lime Dark", "Flat Saffron", "Flat Saffron Dark", "Gradient Azure", "Gradient Azure Dark", "Gradient Lime", "Gradien Lime Dark", "Gradient Saffron", "Gradient Saffron Dark", "Bootstrap", "Office 365", "High contrast 1", "High contrast 2", "Material"];//office 365 is currently in development
     }
     click(theme) {
-        jQuery('body').fadeOut(400, () => {
-            this.updateTheme(theme)
-                .then(() => jQuery('body').fadeIn());
+        window.themeName = theme;
+        window.theme = this.themeInfo[theme].theme;
+        jQuery('body').fadeOut(0, () => {
+        let path = this.themeInfo[theme].path;
+            this.updateTheme(path)
+                .then(() => jQuery('body').fadeIn(2000));
         });
     }
 
-    updateTheme(theme) {
-        window.themeName = theme;
-        window.theme = this.themeInfo[theme].theme;
-        let path = this.themeInfo[theme].path;
+    updateTheme(path) {
+       
         return Promise.all([this.removeCss(), this.updateCss(), this.themePath(path),this.commonPath(),this.datavisualizationTheme()]);
     }
 
