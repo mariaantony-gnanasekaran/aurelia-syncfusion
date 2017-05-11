@@ -5,33 +5,31 @@ export class Theme {
     loadChartTheme() {
         let chartInstance = $("ej-chart").data("ejChart");
         if (chartInstance && window.theme) {
-            chartInstance.option({
-                theme: window.theme,
-            });
-            chartInstance.animate(chartInstance.model.series);
+            chartInstance.model.theme = window.theme;
         }
     }
     loadSunburstTheme() {
         let sunburstInstance = $("ej-sunburst-chart").data("ejSunburstChart");
         if (sunburstInstance && window.theme) {
             if (window.theme.includes("dark") || window.theme.includes("contrast")) {
-                sunburstInstance.option("theme", "flatdark");
+                sunburstInstance.model.theme = "flatdark";
             }
             else
-                sunburstInstance.option("theme", "flatlight");
+                sunburstInstance.model.theme = "flatlight";
         }
     }
+
     loadBulletTheme() {
         let bulletInstance = $("ej-bullet-graph").data("ejBulletGraph");
         if (bulletInstance && window.theme) {
             if (window.theme.includes("dark") || window.theme.includes("contrast")) {
-                bulletInstance.option("theme", "flatdark");
+                bulletInstance.model.theme = "flatdark";
             }
             else if (window.theme.includes("material")) {
-                bulletInstance.option("theme", "material");
+                bulletInstance.model.theme = "material";
             }
             else {
-                bulletInstance.option("theme", "flatlight");
+                bulletInstance.model.theme = "flatlight";
             }
         }
     }
@@ -39,23 +37,23 @@ export class Theme {
         let gaugeInstance = $("ej-circular-gauge").data("ejCircularGauge") || $("ej-linear-gauge").data("ejLinearGauge") || $("ej-digital-gauge").data("ejDigitalGauge");
         if (gaugeInstance && window.theme) {
             if (window.theme.includes("dark") || window.theme.includes("contrast")) {
-                gaugeInstance.option("theme", "flatdark");
+                gaugeInstance.model.theme = "flatdark";
             }
             else
-                gaugeInstance.option("theme", "flatlight");
+                gaugeInstance.model.theme = "flatlight";
         }
     }
     loadRangeNavigatorTheme() {
         let rangeInstance = $("ej-range-navigator").data("ejRangeNavigator");
         if (rangeInstance && window.theme) {
             if (window.theme.includes("bootstrap") || window.theme.includes("material")) {
-                rangeInstance.option("theme", "flatlight");
+                rangeInstance.model.theme = "flatlight";
             }
             else if (window.theme.includes("contrast")) {
-                rangeInstance.option("theme", "flatdark");
+                rangeInstance.model.theme = "flatdark";
             }
             else
-                rangeInstance.option("theme", window.theme);
+                rangeInstance.model.theme = window.theme;
         }
     }
 }
