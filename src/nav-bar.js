@@ -21,33 +21,32 @@ export class NavBar {
             history.pushState(null, null, window.location.hash + "/#!/" + window.theme_URL);
           }
         }
-      });
-    }, 1000)
-
-    jQuery(this.theme).ejDialog({
+      }, 1000);
+    })
+  jQuery(this.theme).ejDialog({
       showOnInit: false,
-      actionButtons: ["close", "pin"],
-      enableAnimation: true,
-      isResponsive: true,
-      animation: {
-        show: {
-          effect: "fade",
-          duration: 700
-        },
-        hide: {
-          effect: "fade",
-          duration: 700
-        }
-      },
-      title: "Themes",
+    actionButtons: ["close", "pin"],
+  enableAnimation: true,
+  isResponsive: true,
+  animation: {
+    show: {
+      effect: "fade",
+      duration: 700
+    },
+    hide: {
+      effect: "fade",
+      duration: 700
+    }
+  },
+  title: "Themes",
 
-    });
-    this.dialogInstance = $(this.theme).data("ejDialog");
+});
+this.dialogInstance = $(this.theme).data("ejDialog");
   }
-  showDialog() {
-    this.dialogInstance.open();
-  }
-  higlightMenuItem(args) {
-    args.detail.element.classList.add('e-active');
-  }
+showDialog() {
+  this.dialogInstance.open();
+}
+higlightMenuItem(args) {
+  args.detail.element.classList.add('e-active');
+}
 }
