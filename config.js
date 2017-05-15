@@ -497,7 +497,7 @@ System.config({
     }
   },
   bundles: {
-    "app-build-f780c68947.js": [
+    "app-build-d5b202fdca.js": [
       "about/about.html!github:systemjs/plugin-text@0.0.4.js",
       "about/about.js",
       "about/ej-bridge-init.html!github:systemjs/plugin-text@0.0.4.js",

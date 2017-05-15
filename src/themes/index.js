@@ -1,31 +1,39 @@
 import { DOM } from 'aurelia-pal';
-import {inject} from 'aurelia-framework';
-import {EventAggregator} from 'aurelia-event-aggregator';
-@inject(EventAggregator)
+import { inject } from 'aurelia-framework';
+import { EventAggregator } from 'aurelia-event-aggregator';
+import { Theme } from './../shared/theme'
+@inject(Theme, EventAggregator)
 export class Index {
-    constructor(ea) {
-        window.oldTheme ="vendors/css/web/bootstrap-theme/ej.web.all.min.css";
+    constructor(theme, ea) {
+        this.update = theme;
         this.ea = ea;
         this.themeInfo = {
-            "Flat Azure": { "path": "default-theme", "theme": "flatlight" }, "Flat Azure Dark": { "path": "flat-azure-dark", "theme": "flatdark" }, "Flat Lime": { "path": "flat-lime", "theme": "flatlight" }, "Flat Lime Dark": { "path": "flat-lime-dark", "theme": "flatdark" }, "Flat Saffron": { "path": "flat-saffron", "theme": "flatlight" },
-            "Flat Saffron Dark": { "path": "flat-saffron-dark", "theme": "flatdark" }, "Gradient Azure": { "path": "gradient-azure", "theme": "gradientlight" }, "Gradient Azure Dark": { "path": "gradient-azure-dark", "theme": "gradientdark" }, "Gradient Lime": { "path": "gradient-lime", "theme": "gradientlight" }, "Gradien Lime Dark": { "path": "gradient-lime-dark", "theme": "gradientdark" },
-            "Gradient Saffron": { "path": "gradient-saffron", "theme": "gradientlight" }, "Gradient Saffron Dark": { "path": "gradient-saffron-dark", "theme": "gradientdark" }, "Bootstrap": { "path": "bootstrap-theme", "theme": "bootstrap" }, "High contrast 1": { "path": "high-contrast-01", "theme": "high-contrast-01" }, "High contrast 2": { "path": "high-contrast-02", "theme": "high-contrast-01" }, "Material": { "path": "material", "theme": "material" }, "Office 365": { "path": "office-365", "theme": "material" }
+            "Flat Azure": { "path": "default-theme", "theme": "flatlight", "url": "azure" }, "Flat Azure Dark": { "path": "flat-azure-dark", "theme": "flatdark", "url": "azuredark" }, "Flat Lime": { "path": "flat-lime", "theme": "flatlight", "url": "lime" }, "Flat Lime Dark": { "path": "flat-lime-dark", "theme": "flatdark", "url": "limedark" }, "Flat Saffron": { "path": "flat-saffron", "theme": "flatlight", "url": "saffron" },
+            "Flat Saffron Dark": { "path": "flat-saffron-dark", "theme": "flatdark", "url": "saffrondark" }, "Gradient Azure": { "path": "gradient-azure", "theme": "gradientlight", "url": "gradientazure" }, "Gradient Azure Dark": { "path": "gradient-azure-dark", "theme": "gradientdark", "url": "gradientazuredark" }, "Gradient Lime": { "path": "gradient-lime", "theme": "gradientlight", "url": "gradientlime" }, "Gradien Lime Dark": { "path": "gradient-lime-dark", "theme": "gradientdark", "url": "gradientlimedark" },
+            "Gradient Saffron": { "path": "gradient-saffron", "theme": "gradientlight", "url": "gradientsaffron" }, "Gradient Saffron Dark": { "path": "gradient-saffron-dark", "theme": "gradientdark", "url": "gradientsaffrondark" }, "Bootstrap": { "path": "bootstrap-theme", "theme": "bootstrap", "url": "bootstrap" }, "High contrast 1": { "path": "high-contrast-01", "theme": "high-contrast-01", "url": "high-contrast-01" }, "High contrast 2": { "path": "high-contrast-02", "theme": "high-contrast-01", "url": "high-contrast-02" }, "Material": { "path": "material", "theme": "material", "url": "material" }, "Office 365": { "path": "office-365", "theme": "material", "url": "office-365" }
         };
-        this.name = ["Flat Azure", "Flat Azure Dark", "Flat Lime", "Flat Lime Dark", "Flat Saffron", "Flat Saffron Dark", "Gradient Azure", "Gradient Azure Dark", "Gradient Lime", "Gradien Lime Dark", "Gradient Saffron", "Gradient Saffron Dark", "Bootstrap","High contrast 1", "High contrast 2", "Material"];//office 365 is currently in development
+        this.name = ["Flat Azure", "Flat Azure Dark", "Flat Lime", "Flat Lime Dark", "Flat Saffron", "Flat Saffron Dark", "Gradient Azure", "Gradient Azure Dark", "Gradient Lime", "Gradien Lime Dark", "Gradient Saffron", "Gradient Saffron Dark", "Bootstrap", "High contrast 1", "High contrast 2", "Material"];//office 365 is currently in development
     }
     click(theme) {
         window.themeName = theme;
         window.theme = this.themeInfo[theme].theme;
+        window.theme_URL = this.themeInfo[theme].url;
+        if (window.location.hash.includes("#!")) {
+            let index = window.location.hash.indexOf("#!");
+            let temp_URL = window.location.hash.substr(0, index - 1);
+            history.pushState(null, null, temp_URL);
+        }
+        history.pushState(null, null, window.location.hash + "/#!/" + window.theme_URL);
         jQuery('body').fadeOut(0, () => {
-        this.path = this.themeInfo[theme].path;
+            this.path = this.themeInfo[theme].path;
             this.updateTheme(this.path)
                 .then(() => jQuery('body').fadeIn(2000));
         });
     }
 
     updateTheme(path) {
-       
-        return Promise.all([this.removeCss(), this.updateCss(), this.themePath(path),this.commonPath(),this.datavisualizationTheme()]) .then(() => this.ea.publish('Theme', theme));
+
+        return Promise.all([this.removeCss(), this.updateCss(), this.themePath(path), this.commonPath(), this.datavisualizationTheme()]).then(() => this.ea.publish('Theme', theme));
     }
 
     datavisualizationTheme() {
