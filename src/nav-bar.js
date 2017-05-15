@@ -21,8 +21,8 @@ export class NavBar {
             history.pushState(null, null, window.location.hash + "/#!/" + window.theme_URL);
           }
         }
-      }, 1000);
-    })
+      });
+    },100)
   jQuery(this.theme).ejDialog({
       showOnInit: false,
     actionButtons: ["close", "pin"],
