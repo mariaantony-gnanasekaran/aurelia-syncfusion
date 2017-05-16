@@ -12,8 +12,7 @@ System.config({
   paths: {
     "*": "src/*",
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "syncfusion-ej-global/*": "jspm_packages/npm/syncfusion-ej-global@15.1.41/*"
+    "npm:*": "jspm_packages/npm/*"
   },
   meta: {
     "showdown/dist/showdown.js": {
@@ -57,6 +56,8 @@ System.config({
     "showdown-prettify": "npm:showdown-prettify@1.3.0",
     "syncfusion-javascript": "npm:syncfusion-javascript@15.2.41",
     "syncfusion-javascript/css/web": "npm:syncfusion-javascript@15.2.41/Content/ej/web",
+    "syncfusion-javascript/scripts/ej/i18n": "npm:syncfusion-ej-global@15.2.40/i18n",
+    "syncfusion-javascript/scripts/ej/i10n": "npm:syncfusion-ej-global@15.2.40/i10n",
     "text": "github:systemjs/plugin-text@0.0.4",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
