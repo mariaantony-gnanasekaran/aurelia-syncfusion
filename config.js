@@ -13,7 +13,6 @@ System.config({
     "*": "src/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*",
-    "syncfusion-javascript/*": "jspm_packages/npm/syncfusion-javascript@15.1.41/*",
     "syncfusion-ej-global/*": "jspm_packages/npm/syncfusion-ej-global@15.1.41/*"
   },
   meta: {
@@ -57,6 +56,7 @@ System.config({
     "showdown": "github:showdownjs/showdown@1.3.0",
     "showdown-prettify": "npm:showdown-prettify@1.3.0",
     "syncfusion-javascript": "npm:syncfusion-javascript@15.2.41",
+    "syncfusion-javascript/css/web": "npm:syncfusion-javascript@15.2.41/Content/ej/web",
     "text": "github:systemjs/plugin-text@0.0.4",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -519,7 +519,7 @@ System.config({
     }
   },
   bundles: {
-    "app-build-48d1650134.js": [
+    "app-build-98c4ea114a.js": [
       "about/about.html!github:systemjs/plugin-text@0.0.4.js",
       "about/about.js",
       "about/ej-bridge-init.html!github:systemjs/plugin-text@0.0.4.js",
