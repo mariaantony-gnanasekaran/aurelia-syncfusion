@@ -224,7 +224,4 @@ export class BasicUse {
 		{ groupMemberPath: 'JobRole' }
     ];
   }
-  onchartload(e){
-    this.update.loadSunburstTheme();
-  }
 }

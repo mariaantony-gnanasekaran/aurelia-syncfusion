@@ -9,7 +9,6 @@ export class BasicUse {
     this.primaryYAxis = {range: {min: 0, max: 80, interval: 20}};
   }
   onchartload(sender) {
-    this.update.loadChartTheme();
     if (!ej.util.isNullOrUndefined(window.orientation) && sender) {             //to modify chart properties for mobile view
       let model = sender.detail.model;
       let seriesLength = model.series.length;
@@ -49,5 +48,4 @@ export class BasicUse {
       }
     }
   }
-
 }

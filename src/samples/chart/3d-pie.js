@@ -7,7 +7,6 @@ export class BasicUse {
     this.seriesborder = { width: 2, color: 'white' };
   }
   onchartload(sender) {
-    this.update.loadChartTheme();
     if (!ej.util.isNullOrUndefined(window.orientation) && sender) {
       let model = sender.detail.model;
       let seriesLength = model.series.length;

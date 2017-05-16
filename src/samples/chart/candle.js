@@ -8,7 +8,6 @@ constructor() {
   this.legend = {visible: false};
 }
 onchartload(sender) {
-  this.update.loadChartTheme();
   if (!ej.util.isNullOrUndefined(window.orientation) && sender) {            //to modify chart properties for mobile view
     let model = sender.detail.model;
     let seriesLength = model.series.length;

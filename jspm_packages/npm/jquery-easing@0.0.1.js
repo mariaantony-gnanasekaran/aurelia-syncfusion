@@ -1,0 +1,1 @@
+module.exports = require("npm:jquery-easing@0.0.1/dist/jquery.easing.1.3.umd");

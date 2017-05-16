@@ -47,25 +47,9 @@ export class Doc {
 
     if (file) {
       this.activeDoc = file.path;
-      if(window.theme){
-      if(window.theme.includes("dark") || window.theme.includes("contrast"))
-      {
-        this.activeDoc = file.themePath;
-      }
-      else
-      this.activeDoc = file.path;
-    }
-      
 
       this.selectInAccordion(fileName, categoryName);
     }
-  }
-  created() {
-    window.onclick = () => {
-       if (this.params.file && this.params.category) {
-      this.switchPage(this.params.file, this.params.category);
-    }
-    };
   }
 
   routeChanged(e) {

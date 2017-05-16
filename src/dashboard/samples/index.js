@@ -13,14 +13,12 @@ export class Index {
       this.routerData = [];
       this.count = Object.keys(this.data).length;
       this.obj = Object.keys(this.data);
-      this.routerData.push({ name: 'codepreview', route: 'codepreview', moduleId: './codepreview/codepreview', title: 'code preview'})
       for (let i = 0; i < this.count; i++) {
         let _name = this.data[this.obj[i]].name;
         let _route = this.obj[i];
         let _title = this.data[this.obj[i]].name;
         let _moduleId = this.data[this.obj[i]].moduleId;
         this.routerData.push({ name: _name, route: _route, moduleId: _moduleId, title: _title });
-        
       }
       return this.routerData;
     }
