@@ -39,7 +39,7 @@
       "files": ["html", "js"],
       "gist": "32ee22569934697d1fe0c1c42749741a"
     },
-    "RTL":{
+    "rtl":{
       "files": ["html", "js","css"],
       "gist": "6646d076fc4cdd395bfdf12798f2c292"
     }
