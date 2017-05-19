@@ -55,9 +55,7 @@ System.config({
     "showdown": "github:showdownjs/showdown@1.3.0",
     "showdown-prettify": "npm:showdown-prettify@1.3.0",
     "syncfusion-javascript": "npm:syncfusion-javascript@15.2.41",
-    "syncfusion-javascript/css/web": "npm:syncfusion-javascript@15.2.41/Content/ej/web",
-    "syncfusion-javascript/scripts/ej/i18n": "npm:syncfusion-ej-global@15.2.40/i18n",
-    "syncfusion-javascript/scripts/ej/i10n": "npm:syncfusion-ej-global@15.2.40/i10n",
+    "syncfusion-ej-global": "npm:syncfusion-ej-global@15.2.40",
     "text": "github:systemjs/plugin-text@0.0.4",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -520,7 +518,7 @@ System.config({
     }
   },
   bundles: {
-    "app-build-98c4ea114a.js": [
+    "app-build-aadd9906db.js": [
       "about/about.html!github:systemjs/plugin-text@0.0.4.js",
       "about/about.js",
       "about/ej-bridge-init.html!github:systemjs/plugin-text@0.0.4.js",
@@ -1181,7 +1179,8 @@ System.config({
       "shared/logger.js",
       "shared/markdown.js",
       "shared/registry.js",
-      "shared/showcase.html!github:systemjs/plugin-text@0.0.4.js"
+      "shared/showcase.html!github:systemjs/plugin-text@0.0.4.js",
+      "shared/theme.js"
     ]
   }
 });
