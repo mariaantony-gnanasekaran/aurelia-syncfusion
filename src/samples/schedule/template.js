@@ -145,19 +145,19 @@ export class Template {
       function _getImages(date) {
         switch (new Date(date).getDay()) {
         case 0:
-          return "<img src='images/schedule/cake.png'/>";
+          return "<img src='images/Scheduleule/cake.png'/>";
         case 1:
-          return "<img src='images/schedule/basketball.png'/>";
+          return "<img src='images/Scheduleule/basketball.png'/>";
         case 2:
-          return "<img src='images/schedule/rugby.png'/>";
+          return "<img src='images/Scheduleule/rugby.png'/>";
         case 3:
-          return "<img src='images/schedule/guitar.png'/>";
+          return "<img src='images/Scheduleule/guitar.png'/>";
         case 4:
-          return "<img src='images/schedule/music.png'/>";
+          return "<img src='images/Scheduleule/music.png'/>";
         case 5:
-          return "<img src='images/schedule/doctor.png'/>";
+          return "<img src='images/Scheduleule/doctor.png'/>";
         case 6:
-          return "<img src='images/schedule/beach.png'/>";
+          return "<img src='images/Scheduleule/beach.png'/>";
         default:
           return null;
         }
