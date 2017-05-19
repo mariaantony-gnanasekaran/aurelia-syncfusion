@@ -21,7 +21,8 @@
     },
     "kpi":{
       "files":["html","js"],
-      "gist": "3b04810a60526d0ac6e092b963b8b133"
+      "gist": "3b04810a60526d0ac6e092b963b8b133",
+      "title":"KPI"
     },
     "named-Set":{
       "files":["html","js"],
@@ -41,7 +42,8 @@
     },
     "rtl":{
       "files": ["html", "js","css"],
-      "gist": "6646d076fc4cdd395bfdf12798f2c292"
+      "gist": "6646d076fc4cdd395bfdf12798f2c292",
+      "title":"RTL"
     }
   }
 }
