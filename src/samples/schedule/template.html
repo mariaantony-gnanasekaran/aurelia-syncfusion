@@ -82,47 +82,47 @@
     <script id="workTemplate" type="text/x-jsrender">
         {{if resource.classname == 'e-parentnode'}} {{:resource.text}} {{else}} {{if date.getDay() == 0 || date.getDay() == 6}}
         <div class="image">
-            <img src='images/Schedule/weekend.png' />
+            <img src='images/schedule/weekend.png' />
             <br /><span class="caption">Weekend</span>
         </div>
         {{else}} {{if view == 'month' && resource.text == 'Party Hall-A' && date.getDay() == 5}}
         <div class="image">
-            <img src='images/Schedule/meeting.png' />
+            <img src='images/schedule/meeting.png' />
             <br /><span class="caption">Meeting</span>
         </div>
         {{else resource.text != 'Party Hall-B' && date.getDate() == 15}}
         <div class="image">
-            <img src='images/Schedule/holiday.png' />
+            <img src='images/schedule/holiday.png' />
             <br /><span class="caption">Holiday</span>
         </div>
         {{else view != 'month' && resource.text == 'Party Hall-A' && date.getDay() == 5 && date.getHours() == 10}}
         <div class="image">
-            <img src='images/Schedule/meeting.png' />
+            <img src='images/schedule/meeting.png' />
             <br /><span class="caption">Meeting</span>
         </div>
         {{else view == 'month' && resource.text == 'Party Hall-B' && date.getDay() == 5}}
         <div class="image">
-            <img src='images/Schedule/conference.png' />
+            <img src='images/schedule/conference.png' />
             <br /><span class="caption">Conf.</span>
         </div>
         {{else resource.text == 'Party Hall-B' && date.getDate() == 16}}
         <div class="image">
-            <img src='images/Schedule/happyday.png' />
+            <img src='images/schedule/happyday.png' />
             <br /><span class="caption">Happyday</span>
         </div>
         {{else view != 'month' && resource.text == 'Party Hall-B' && date.getDay() == 5 && date.getHours() == 12}}
         <div class="image">
-            <img src='images/Schedule/conference.png' />
+            <img src='images/schedule/conference.png' />
             <br /><span class="caption">Conf.</span>
         </div>
         {{else date.getDate() == 10 && date.getMonth() == 11}}
         <div class="image">
-            <img src='images/Schedule/wednesday.png' />
+            <img src='images/schedule/wednesday.png' />
             <br /><span class="caption">Day Spl</span>
         </div>
         {{else date.getDate() == 25 && date.getMonth() == 11}}
         <div class="image">
-            <img src='images/Schedule/christmas.png' />
+            <img src='images/schedule/christmas.png' />
             <br /><span class="caption">Christmas</span>
         </div>
         {{/if}} {{/if}} {{/if}}

@@ -19,10 +19,9 @@
       "files":["html","js", "css"],
       "gist": "20cfc770cb2813262d92e5dde040a8ad"
     },
-    "kpi":{
+    "kPI":{
       "files":["html","js"],
-      "gist": "3b04810a60526d0ac6e092b963b8b133",
-      "title":"KPI"
+      "gist": "3b04810a60526d0ac6e092b963b8b133"
     },
     "named-Set":{
       "files":["html","js"],
@@ -40,10 +39,9 @@
       "files": ["html", "js"],
       "gist": "32ee22569934697d1fe0c1c42749741a"
     },
-    "rtl":{
+    "RTL":{
       "files": ["html", "js","css"],
-      "gist": "6646d076fc4cdd395bfdf12798f2c292",
-      "title":"RTL"
+      "gist": "6646d076fc4cdd395bfdf12798f2c292"
     }
   }
 }

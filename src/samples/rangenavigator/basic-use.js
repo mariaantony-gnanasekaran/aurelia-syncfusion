@@ -18,11 +18,7 @@ export class BasicUse {
       $('#chart').ejChart('redraw');
     }
   }
-  onLoad() {
-    this.update.loadRangeNavigatorTheme();
-  }
   onchartload(sender) {
-    this.update.loadChartTheme();
     let data = this.getdata();
     sender.detail.model.series[0].dataSource = data.Open;
     sender.detail.model.series[0].xName = 'XValue';

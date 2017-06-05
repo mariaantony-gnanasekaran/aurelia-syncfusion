@@ -12,7 +12,9 @@ System.config({
   paths: {
     "*": "src/*",
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+    "npm:*": "jspm_packages/npm/*",
+    "syncfusion-javascript/*": "jspm_packages/npm/syncfusion-javascript@15.1.33/*",
+    "syncfusion-ej-global/*": "jspm_packages/npm/syncfusion-ej-global@15.1.33/*"
   },
   meta: {
     "showdown/dist/showdown.js": {
@@ -55,7 +57,7 @@ System.config({
     "showdown": "github:showdownjs/showdown@1.3.0",
     "showdown-prettify": "npm:showdown-prettify@1.3.0",
     "syncfusion-javascript": "npm:syncfusion-javascript@15.2.41",
-    "syncfusion-ej-global": "npm:syncfusion-ej-global@15.2.40",
+    "syncfusion-widgets": "npm:syncfusion-javascript@15.1.33",
     "text": "github:systemjs/plugin-text@0.0.4",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -343,7 +345,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:jquery-validation@1.16.0": {
-      "jquery": "npm:jquery@2.2.4",
+      "jquery": "npm:jquery@3.2.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:js-prettify@1.4.0": {
@@ -463,8 +465,15 @@ System.config({
     "npm:strip-ansi@3.0.1": {
       "ansi-regex": "npm:ansi-regex@2.0.0"
     },
-    "npm:syncfusion-javascript@15.2.41": {
+    "npm:syncfusion-javascript@15.1.33": {
       "jquery": "npm:jquery@2.2.4",
+      "jquery-validation": "npm:jquery-validation@1.16.0",
+      "jquery-validation-unobtrusive": "npm:jquery-validation-unobtrusive@3.2.6",
+      "jsrender": "npm:jsrender@0.9.84",
+      "syncfusion-ej-global": "npm:syncfusion-ej-global@15.2.40"
+    },
+    "npm:syncfusion-javascript@15.2.41": {
+      "jquery": "npm:jquery@3.2.1",
       "jquery-validation": "npm:jquery-validation@1.16.0",
       "jsrender": "npm:jsrender@0.9.84",
       "syncfusion-ej-global": "npm:syncfusion-ej-global@15.2.40"
@@ -518,7 +527,7 @@ System.config({
     }
   },
   bundles: {
-    "app-build-aadd9906db.js": [
+    "app-build-98c4ea114a.js": [
       "about/about.html!github:systemjs/plugin-text@0.0.4.js",
       "about/about.js",
       "about/ej-bridge-init.html!github:systemjs/plugin-text@0.0.4.js",
@@ -1179,8 +1188,7 @@ System.config({
       "shared/logger.js",
       "shared/markdown.js",
       "shared/registry.js",
-      "shared/showcase.html!github:systemjs/plugin-text@0.0.4.js",
-      "shared/theme.js"
+      "shared/showcase.html!github:systemjs/plugin-text@0.0.4.js"
     ]
   }
 });
